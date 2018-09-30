@@ -29,7 +29,7 @@
            (-> #:institution any/c #:number any/c element?)]
           [dissertation-location
            (->* [#:institution any/c] [#:degree any/c] element?)])
-          [anthology-location
+          [book-chapter-location
            (->* [any/c] [#:pages (or/c (list/c any/c any/c) #f) #:section any/c #:volume any/c #:publisher any/c] element?)]
          other-authors
          editor
@@ -565,7 +565,7 @@
          #:degree [degree "PhD"])
   @elem{@to-string[degree] dissertation, @to-string[org]})
 
-(define (anthology-location
+(define (book-chapter-location
          location
          #:pages [pages #f]
          #:series [series #f]
